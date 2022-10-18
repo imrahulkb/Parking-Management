@@ -150,6 +150,7 @@ int main()
                 cout<<"Enter Vehicle Registration Number: ";
                 cin>>plate;
                 cout<<"Enter Vehicle Category: ";
+                cout<<"0. Auto\n 1.Car \n2. Tempo\n3. Bus"<<endl;
                 cin>>type;
                 lots[j].allocate(name,plate,type);
 
@@ -160,6 +161,11 @@ int main()
             int n;
             cout<<"Enter Plot No. To Deallocate : ";
             cin>>n;
+            if(lot[n].c==NULL)
+            {
+                cout<<"The slot is already empty\n"<<endl;
+                break;
+            }
             time_t outtime;
             outtime=time(0);
             generatebill(&lots[n],outtime);
